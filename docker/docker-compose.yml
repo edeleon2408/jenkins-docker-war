@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+    demo-weblogic-api:
+        container_name: demo-weblogic-war
+        build:
+            context: .
+        ports:
+            - "8085:8080"
+        networks:
+            - jenkins
+        volumes:
+            - /opt/demoweblogic/assets/:/usr/share/assets/
+            
+networks:
+    jenkins:
+      driver: bridge
