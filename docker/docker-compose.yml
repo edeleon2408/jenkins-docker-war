@@ -1,9 +1,9 @@
 version: '2'
 
 services:
-    pruebas-demo-weblogic-api:
-        container_name: pruebas-demo-weblogic-war
-        image: prueba-demo-weblogic-war
+    prueba-jenkins-docker-war:
+        container_name: prueba-jenkins-docker-war
+        image: prueba-jenkins-docker-war
         #build:
         #    context: .
         ports:

@@ -23,7 +23,7 @@ pipeline {
     stage('Build-Image-Docker'){     
     	 steps{
             echo 'Construyendo Imagen Docker del Proyecto'
-			bat 'docker build -f docker/Dockerfile -t prueba-demo-weblogic-war .'
+			bat 'docker build -f docker/Dockerfile -t prueba-jenkins-docker-war-war .'
 			//bat 'docker rm -f jenkins-docker-api'			
 	   }        	
     }
@@ -43,7 +43,7 @@ pipeline {
         success {
             echo 'I will success!'
             mail bcc: '', 
-            body: "<b>Notificación CI</b><br><br>Estimado Usuario, El proceso CI se ha ejecutado el proceso de manera satisfactoria.<br><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL de build: ${env.BUILD_URL}",
+            body: "<b>Notificación CI</b><br><br>Estimado Usuario, El proceso CI se ha ejecutado de manera satisfactoria.<br><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL de build: ${env.BUILD_URL}",
             cc: '', 
             charset: 'UTF-8', 
             from: '', 
