@@ -1,11 +1,10 @@
 version: '2'
 
 services:
-    prod-jenkins-docker-war:
-        container_name: prod-jenkins-docker-war
-        image: prod-jenkins-docker-war
-        #build:
-        #    context: .
+    demo-weblogic-api:
+        container_name: demo-weblogic-war
+        build:
+            context: .
         ports:
             - "8085:8080"
         networks:

@@ -18,12 +18,12 @@ LABEL maintainer="usuario@gmail.com"
 #ENV DATABASE_POOL 64
 
 # The application's war file
-#ARG JAR_FILE=/target/jenkins-docker-war.war
+#ARG JAR_FILE=/target/demo-weblogic.war
 
 # Add the application's jar to the container
-#ADD ${JAR_FILE} jenkins-docker-war.war
-ADD /target/jenkins-docker-war.war /usr/local/tomcat/webapps/
+#ADD ${JAR_FILE} demo-weblogic.war
+ADD demo-weblogic.war /usr/local/tomcat/webapps/
 
 # Run the war file 
-#ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar","/jenkins-docker-war.war"]
+#ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar","/demo-weblogic.war"]
 CMD ["catalina.sh", "run"]
