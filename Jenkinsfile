@@ -23,7 +23,7 @@ pipeline {
     stage('Build-Image-Docker'){     
     	 steps{
             echo 'Construyendo Imagen Docker del Proyecto'
-			bat 'docker build -f docker/Dockerfile -t prueba-jenkins-docker-war-war .'
+			bat 'docker build -f docker/Dockerfile -t prueba-jenkins-docker-war .'
 			//bat 'docker rm -f jenkins-docker-api'			
 	   }        	
     }
