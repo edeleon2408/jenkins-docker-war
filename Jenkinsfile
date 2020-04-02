@@ -32,7 +32,7 @@ pipeline {
             echo 'Construyendo Imagen y Contenedor Docker del Proyecto'	
             bat """
                    cd docker
-            	   docker-compose up -d	
+            	   docker-compose up -ddd	
             	"""
 	   }        	
     }//fin stage
@@ -40,8 +40,8 @@ pipeline {
   }//fin stages
   
   post {
-        always {
-            echo 'I will always say Hello again!'
+        success {
+            echo 'I will success!'
             mail bcc: '', 
             body: "<b>Notificación CI</b><br><br>Estimado Usuario, El proceso CI se ha ejecutado el proceso de manera satisfactoria.<br><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL de build: ${env.BUILD_URL}",
             cc: '', 
@@ -52,6 +52,18 @@ pipeline {
             subject: "SUCCESS CI: Project name -> ${env.JOB_NAME}", 
             to: "edeleon2408@gmail.com";  
                      
+        }
+        failure {
+        	echo 'I will success!'
+            mail bcc: '', 
+            body: "<b>Notificación CI</b><br><br>Estimado Usuario, El proceso CI ha fallado, por favor notificar al area administrativa del proceso.<br><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> URL de build: ${env.BUILD_URL}",
+            cc: '', 
+            charset: 'UTF-8', 
+            from: '', 
+            mimeType: 'text/html', 
+            replyTo: '', 
+            subject: "FAILURED CI: Project name -> ${env.JOB_NAME}", 
+            to: "edeleon2408@gmail.com";
         }
     }//fin post
 }
