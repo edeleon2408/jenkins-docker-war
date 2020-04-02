@@ -2,7 +2,10 @@
 pipeline {
  agent any
  stages {
-    stage('Checkout-Proyecto'){     
+    stage('Checkout-Proyecto'){  
+    	 when {
+                    branch 'pruebas'
+         }   
     	 steps{
             echo 'Revisando repositorio del Proyecto'
 			git poll: true, url: 'https://github.com/edeleon2408/jenkins-docker-war.git'
