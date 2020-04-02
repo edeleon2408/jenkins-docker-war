@@ -70,7 +70,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>demo-weblogic</finalName>
+		<finalName>jenkins-docker-war</finalName>
 	</build>
 
 </project>
