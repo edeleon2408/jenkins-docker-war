@@ -17,7 +17,7 @@ pipeline {
     stage('Check-SonarQ-Proyecto'){     
     	 steps{
             echo 'Check Codigo en SonarQubw'
-			bat 'mvn sonar:sonar -Dsonar.projectKey=jenkins-docker-war -Dsonar.host.url=http://localhost:9000 -Dsonar.login=db1020ca2e1e304eca9eb7077806c1bfd48c6ee4'
+			bat 'mvn sonar:sonar -Dsonar.projectKey=desarrollo-jenkins-docker-war -Dsonar.host.url=http://localhost:9000 -Dsonar.login=44beea01194da61f14d8b8eb5de3374d16b37272'
 	   }        	
     }
     //stage('Build-Image-Docker'){     

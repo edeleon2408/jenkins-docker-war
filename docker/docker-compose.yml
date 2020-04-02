@@ -1,12 +1,12 @@
 version: '2'
 
 services:
-    demo-weblogic-api:
-        container_name: demo-weblogic-war
+    prubas-demo-weblogic-api:
+        container_name: pruebas-demo-weblogic-war
         build:
             context: .
         ports:
-            - "8085:8080"
+            - "8086:8080"
         networks:
             - jenkins
         volumes:
