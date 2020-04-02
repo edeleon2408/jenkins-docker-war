@@ -22,7 +22,7 @@ LABEL maintainer="usuario@gmail.com"
 
 # Add the application's jar to the container
 #ADD ${JAR_FILE} demo-weblogic.war
-ADD demo-weblogic.war /usr/local/tomcat/webapps/
+ADD /target/demo-weblogic.war /usr/local/tomcat/webapps/
 
 # Run the war file 
 #ENTRYPOINT ["java", "-Djava.security.egd=file:/dev/./urandom", "-jar","/demo-weblogic.war"]
