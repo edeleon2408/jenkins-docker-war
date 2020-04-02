@@ -21,7 +21,7 @@ LABEL maintainer="usuario@gmail.com"
 #ARG JAR_FILE=/target/demo-weblogic.war
 
 # Add the application's jar to the container
-#ADD ${JAR_FILE} /usr/local/tomcat/webapps/
+#ADD ${JAR_FILE} demo-weblogic.war
 ADD demo-weblogic.war /usr/local/tomcat/webapps/
 
 # Run the war file 
