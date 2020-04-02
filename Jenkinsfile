@@ -32,7 +32,7 @@ pipeline {
             echo 'Construyendo Imagen y Contenedor Docker del Proyecto'	
             bat """
                    cd docker
-            	   docker-compose up -ddd	
+            	   docker-compose up -d	
             	"""
 	   }        	
     }//fin stage
