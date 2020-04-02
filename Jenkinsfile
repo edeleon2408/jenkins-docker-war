@@ -20,13 +20,13 @@ pipeline {
 			bat 'mvn sonar:sonar -Dsonar.projectKey=desarrollo-jenkins-docker-war -Dsonar.host.url=http://localhost:9000 -Dsonar.login=44beea01194da61f14d8b8eb5de3374d16b37272'
 	   }        	
     }
-    //stage('Build-Image-Docker'){     
-    //	 steps{
-    //        echo 'Construyendo Imagen Docker del Proyecto'
-	//		bat 'docker build -f docker/Dockerfile -t jenkins-docker-api .'
-	//		//bat 'docker rm -f jenkins-docker-api'			
-	//   }        	
-    //}
+    stage('Build-Image-Docker'){     
+    	 steps{
+            echo 'Construyendo Imagen Docker del Proyecto'
+			bat 'docker build -f docker/Dockerfile -t prueba-demo-weblogic-api .'
+			//bat 'docker rm -f jenkins-docker-api'			
+	   }        	
+    }
     stage('Build-Image-Container-Docker'){     
     	 steps{
             echo 'Construyendo Imagen y Contenedor Docker del Proyecto'	

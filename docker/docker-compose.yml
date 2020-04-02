@@ -1,10 +1,11 @@
 version: '2'
 
 services:
-    prubas-demo-weblogic-api:
+    pruebas-demo-weblogic-api:
         container_name: pruebas-demo-weblogic-war
-        build:
-            context: .
+        image: prueba-demo-weblogic-war
+        #build:
+        #    context: .
         ports:
             - "8086:8080"
         networks:
