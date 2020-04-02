@@ -23,7 +23,7 @@ pipeline {
     stage('Build-Image-Docker'){     
     	 steps{
             echo 'Construyendo Imagen Docker del Proyecto'
-			bat 'docker build -f docker/Dockerfile -t prueba-demo-weblogic-api .'
+			bat 'docker build -f docker/Dockerfile -t prueba-demo-weblogic-war .'
 			//bat 'docker rm -f jenkins-docker-api'			
 	   }        	
     }
