@@ -32,7 +32,7 @@ pipeline {
             echo 'Desplegando Imagen docker Hub'
             //edema28 and edema0890 ${env.BUILD_NUMBER}
             script {
-				docker.withRegistry('https://hub.docker.com', 'edema0890') {
+				docker.withRegistry('https://registry.hub.docker.com', 'jenkins-docker-hub') {
             	app.push("prueba-jenkins-docker-war")
             	app.push("latest")
             }
