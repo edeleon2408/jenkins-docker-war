@@ -37,7 +37,7 @@ public class UsuarioApiController {
 	
 	@GetMapping("/")
 	public String hello() {
-		return "Hola Erwin desde WebLogic 12c";
+		return "Hola Erwin, esto es una prueba Jenkins-Docker-war-jobdsl";
 	}
 	
 	/**
