@@ -27,6 +27,16 @@ pipeline {
 			//bat 'docker rm -f jenkins-docker-api'			
 	   }        	
     }
+    stage('Deploy-Image-Docker-Hub'){     
+    	 steps{
+            echo 'Desplegando Imagen docker Hub'
+            //edema28 and edema0890 ${env.BUILD_NUMBER}
+			docker.withRegistry('https://registry.hub.docker.com', 'edema0890') {
+            app.push("prueba-jenkins-docker-war")
+            app.push("latest")
+        }
+	   }        	
+    }
     stage('Build-Image-Container-Docker'){     
     	 steps{
             echo 'Construyendo Imagen y Contenedor Docker del Proyecto'	
