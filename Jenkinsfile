@@ -31,9 +31,11 @@ pipeline {
     	 steps{
             echo 'Desplegando Imagen docker Hub'
             //edema28 and edema0890 ${env.BUILD_NUMBER}
-			docker.withRegistry('https://registry.hub.docker.com', 'edema0890') {
-            app.push("prueba-jenkins-docker-war")
-            app.push("latest")
+            script {
+				docker.withRegistry('https://hub.docker.com', 'edema0890') {
+            	app.push("prueba-jenkins-docker-war")
+            	app.push("latest")
+            }
         }
 	   }        	
     }
