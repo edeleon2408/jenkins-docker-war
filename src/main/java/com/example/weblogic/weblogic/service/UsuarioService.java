@@ -14,4 +14,5 @@ import com.example.weblogic.weblogic.entity.Usuario;
 public interface UsuarioService {
 
 	public ArrayList<Usuario> listarUsuarios();
+	public Usuario obtenerUsuario();
 }

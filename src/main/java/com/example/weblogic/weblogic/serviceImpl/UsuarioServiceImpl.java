@@ -38,4 +38,13 @@ public class UsuarioServiceImpl implements UsuarioService{
 		return lstUser;
 	}
 
+	@Override
+	public Usuario obtenerUsuario() {
+		// TODO Auto-generated method stub
+		Usuario u1 = new Usuario();
+		u1.setUser("edeleon2408@gmail.com");
+		u1.setPassword("edeleon2408");
+		return u1;
+	}
+
 }

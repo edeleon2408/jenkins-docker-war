@@ -49,13 +49,27 @@ public class UsuarioApiController {
                 + "1. ArrayList<Usuario>.\r\n"
                 + "2. Lista Vacia.\r\n"
                 + "3. Error.\r\n")})
-	@GetMapping(value = "/listar-usuario",produces = {"application/json"})
-	public ResponseEntity<ArrayList<Usuario>> listarUsuario(HttpServletResponse response) {
+	@GetMapping(value = "/listar-usuarios",produces = {"application/json"})
+	public ResponseEntity<ArrayList<Usuario>> listarUsuarios(HttpServletResponse response) {
 		//response.addHeader("nombre", "Erwin");
 		//HttpHeaders headers = new HttpHeaders();
 		//headers.add(HttpHeaders.AUTHORIZATION, "token");
 		//headers.add(HttpHeaders.COOKIE, "cookie");
 		
 		return ResponseEntity.ok(usuarioService.listarUsuarios());
+	}
+	
+	/**
+	 * @return
+	 */
+	@ApiOperation(value = "Obtener un usuario.", response = ArrayList.class)
+    @ApiResponses(value = {
+        @ApiResponse(code = 200, message = "Respuesta del Servicio para la Gestión de un usuario:\r\n"
+                + "1. Usuario.\r\n"
+                + "2. Usuario null.\r\n"
+                + "3. Error.\r\n")})
+	@GetMapping(value = "/obtener-usuario",produces = {"application/json"})
+	public ResponseEntity<Usuario> obtenerUsuario(HttpServletResponse response) {
+		return ResponseEntity.ok(usuarioService.obtenerUsuario());
 	}
 }
