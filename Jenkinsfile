@@ -27,7 +27,7 @@ pipeline {
 			//bat 'docker rm -f jenkins-docker-api'			
 	   }        	
     }
-    stage('Deploy-Image-Docker-Hub'){     
+    /*stage('Deploy-Image-Docker-Hub'){     
     	 steps{    	 
             echo 'Desplegando Imagen docker Hub'
             //edema28 and edema0890 ${env.BUILD_NUMBER}
@@ -39,7 +39,7 @@ pipeline {
             }
         }
 	   }        	
-    }
+    }*/
     stage('Build-Image-Container-Docker'){     
     	 steps{
             echo 'Construyendo Imagen y Contenedor Docker del Proyecto'	
