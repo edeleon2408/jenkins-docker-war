@@ -28,11 +28,11 @@ pipeline {
 	   }        	
     }
     stage('Deploy-Image-Docker-Hub'){     
-    	 steps{
-    	 def app = docker.build("edema28/prueba-jenkins-docker-war")
+    	 steps{    	 
             echo 'Desplegando Imagen docker Hub'
             //edema28 and edema0890 ${env.BUILD_NUMBER}
             script {
+            	def app = docker.build("edema28/prueba-jenkins-docker-war")
 				docker.withRegistry('https://registry.hub.docker.com', 'jenkins-docker-hub') {
             	app.push("${env.BUILD_NUMBER}")
             	app.push("latest")
