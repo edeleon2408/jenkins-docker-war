@@ -1,0 +1,14 @@
+******************Crear .csr *******************************************
+openssl req -new -nodes -keyout jenkins.key -out jenkins.csr -days 3650 
+
+************************** Crear .crt *********************************************
+openssl x509 -req -days 3650 -in jenkins.csr -signkey jenkins.key -out jenkins.crt
+
+****************************** Crear .p12 *********************************
+openssl pkcs12 -export -in jenkins.crt -inkey jenkins.key -out jenkins.p12
+
+******************************** Crear .jks *******************************
+keytool -importkeystore -srckeystore jenkins.p12 -srcstoretype PKCS12 -destkeystore jenkins.jks -deststoretype JKS
+
+******************************** Crear .pfx *******************************
+openssl pkcs12 -export -out jenkins.pfx -inkey jenkins.key -in jenkins.crt
