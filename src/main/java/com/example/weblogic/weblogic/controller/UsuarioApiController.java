@@ -72,4 +72,18 @@ public class UsuarioApiController {
 	public ResponseEntity<Usuario> obtenerUsuario(HttpServletResponse response) {
 		return ResponseEntity.ok(usuarioService.obtenerUsuario());
 	}
+	
+	/**
+	 * @return
+	 */
+	@ApiOperation(value = "Obtener Impuesto.", response = String.class)
+    @ApiResponses(value = {
+        @ApiResponse(code = 200, message = "Respuesta del Servicio para la Gestión del impuesto:\r\n"
+                + "1. Impuesto.\r\n"
+                + "2. Impuesto null.\r\n"
+                + "3. Error.\r\n")})
+	@GetMapping(value = "/obtener-impuesto",produces = {"application/json"})
+	public String obtenerImpuesto(HttpServletResponse response) {
+		return "Bienvenido!, su impuesto es de 1.000";
+	}
 }
