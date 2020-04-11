@@ -5,9 +5,11 @@ package com.example.weblogic.weblogic.serviceImpl;
 
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.weblogic.weblogic.entity.Usuario;
+import com.example.weblogic.weblogic.service.UsuarioRepository;
 import com.example.weblogic.weblogic.service.UsuarioService;
 
 /**
@@ -16,6 +18,9 @@ import com.example.weblogic.weblogic.service.UsuarioService;
  */
 @Service
 public class UsuarioServiceImpl implements UsuarioService{
+	
+	@Autowired
+	private UsuarioRepository usuarioRepository;
 
 	@Override
 	public ArrayList<Usuario> listarUsuarios() {
@@ -45,6 +50,12 @@ public class UsuarioServiceImpl implements UsuarioService{
 		u1.setUser("edeleon2408@gmail.com");
 		u1.setPassword("edeleon2408");
 		return u1;
+	}
+
+	@Override
+	public ArrayList<Usuario> listarUsuariosBD() {
+		// TODO Auto-generated method stub
+		return (ArrayList<Usuario>) usuarioRepository.listarUsuariosBD();
 	}
 
 }

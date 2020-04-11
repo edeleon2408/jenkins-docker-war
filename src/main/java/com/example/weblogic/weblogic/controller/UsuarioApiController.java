@@ -62,6 +62,20 @@ public class UsuarioApiController {
 	/**
 	 * @return
 	 */
+	@ApiOperation(value = "Listar todos los usuarios de la BD.", response = ArrayList.class)
+    @ApiResponses(value = {
+        @ApiResponse(code = 200, message = "Respuesta del Servicio para la Gestión de usuarios de la BD:\r\n"
+                + "1. ArrayList<Usuario>.\r\n"
+                + "2. Lista Vacia.\r\n"
+                + "3. Error.\r\n")})
+	@GetMapping(value = "/listar-usuariosbd",produces = {"application/json"})
+	public ResponseEntity<ArrayList<Usuario>> listarUsuariosBD(HttpServletResponse response) {
+		return ResponseEntity.ok(usuarioService.listarUsuariosBD());
+	}
+	
+	/**
+	 * @return
+	 */
 	@ApiOperation(value = "Obtener un usuario.", response = ArrayList.class)
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "Respuesta del Servicio para la Gestión de un usuario:\r\n"
