@@ -22,13 +22,13 @@ public class UsuarioServiceImpl implements UsuarioService{
 		// TODO Auto-generated method stub
 		ArrayList<Usuario> lstUser = new ArrayList<>();
 		Usuario u1 = new Usuario();
-		u1.setUser("user1");
+		u1.setUser("edeleon@gmail.com");
 		u1.setPassword("password1");
 		Usuario u2 = new Usuario();
-		u2.setUser("user1");
+		u2.setUser("amara@gmail.com");
 		u2.setPassword("password1");
 		Usuario u3 = new Usuario();
-		u3.setUser("user1");
+		u3.setUser("dios@gmail.com");
 		u3.setPassword("password1");
 		
 		lstUser.add(u1);
